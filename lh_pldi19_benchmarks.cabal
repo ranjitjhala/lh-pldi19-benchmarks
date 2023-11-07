@@ -1,0 +1,47 @@
+cabal-version: 2.4
+
+name:           lh_pldi19_benchmarks
+version:        0.1.0.0
+homepage:       https://github.com/ranjitjhala/pp
+bug-reports:    https://github.com/ranjitjhala/pp/issues
+author:         Ranjit Jhala
+maintainer:     jhala@cs.ucsd.edu
+copyright:      2023 Ranjit Jhala
+license:        MIT
+build-type:     Simple
+extra-source-files:
+    README.md
+
+source-repository head
+  type: git
+  location: https://github.com/ranjitjhala/pp
+
+library
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.9.1.0 && <5
+    , bytestring
+    , containers
+    , directory
+    , filepath
+    , unordered-containers
+  default-language: Haskell2010
+  ghc-options: -Wall -O2 -Werror
+
+
+executable pp
+  main-is: Main.hs
+  other-modules:
+      Paths_pp
+  hs-source-dirs:
+      src
+  ghc-options: -Wall -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.9.1.0 && <5
+    , bytestring
+    , containers
+    , directory
+    , filepath
+    , mtl
+  default-language: Haskell2010
