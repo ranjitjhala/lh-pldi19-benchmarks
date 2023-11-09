@@ -3,6 +3,7 @@ Map-Reduce
 
 <div class="hidden">
 \begin{code}
+{-@ LIQUID "--prune-unsorted" @-}
 module MapReduce (mapReduce) where
 
 import qualified Data.Map as M
@@ -73,5 +74,3 @@ collapse f = M.map (foldr1 f)
 toList :: M.Map k v -> List (k, v)
 toList = M.foldrWithKey (\k v acc -> add (k, v) acc) empty
 \end{code}
-
-

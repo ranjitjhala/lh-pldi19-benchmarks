@@ -54,6 +54,7 @@ one_plus_one_eq_two = (1 + 1 == 2)
 But of course, not to expressions that are `False`:
 
 \begin{code}
+{-@ fail one_plus_one_eq_three @-}
 {-@ one_plus_one_eq_three :: TRUE @-}
 one_plus_one_eq_three = (1 + 1 == 3)  -- TYPE ERROR
 \end{code}
@@ -76,6 +77,7 @@ propOk   = lAssert (1 + 1 == 2)
 But if we try to `lAssert` bogus facts then they are rejected:
 
 \begin{code}
+{-@ fail propFail @-}
 propFail = lAssert (1 + 1 == 3) -- TYPE ERROR
 \end{code}
 

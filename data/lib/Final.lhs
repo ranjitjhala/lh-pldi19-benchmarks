@@ -2,14 +2,14 @@
 title: Final, Due Fri 3/20 (23:59:59 Pacific)
 ---
 
-\begin{code} 
+\begin{code}
 module Final where
 \end{code}
 
 Instructions
 ------------
 
-To complete this homework, 
+To complete this homework,
 
 1. **Download** [the new virtual machine](http://goto.ucsd.edu/~gridaphobe/CSE230.ova)
    ([32-bit version](http://goto.ucsd.edu/~gridaphobe/CSE230-32-bit.ova)),
@@ -40,7 +40,7 @@ To complete this homework,
 
    (This will include the snapshotted files as well)
 
-5. **Submit** by emailing `final.tar.gz` to `cse230@goto.ucsd.edu` with the subject "Final"; 
+5. **Submit** by emailing `final.tar.gz` to `cse230@goto.ucsd.edu` with the subject "Final";
    you will receive a confirmation email after submitting.
 
 **Your code must typecheck against the given type signatures.**
@@ -48,13 +48,14 @@ To complete this homework,
 + Please post questions to Piazza.
 
 
-Problem 0: Your Clicker ID 
+Problem 0: Your Clicker ID
 --------------------------
 
 To get your clicker points, please fill in your clicker ID below:
 
 \begin{code}
-myClickerID = error "TBD" 
+{-@ fail myClickerID @-}
+myClickerID = error "TBD"
 \end{code}
 
 Problem 1: Concurrent FIFO (30pts)
@@ -87,7 +88,3 @@ Problem 5: KMeans Clustering (10pts)
 
 + [code](KMeans.lhs)
 + [html](KMeans.html)
-
-
-
-

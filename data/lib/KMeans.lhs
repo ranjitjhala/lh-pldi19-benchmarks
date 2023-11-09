@@ -6,6 +6,7 @@ K-Means Clustering
 \begin{code}
 {-@ LIQUID "--short-names"    @-}
 {-@ LIQUID "--no-termination" @-}
+{-@ LIQUID "--prune-unsorted" @-}
 
 module KMeans (kmeans, kmeans1, nearest, mergeCluster) where
 
@@ -200,4 +201,3 @@ Fix the code and specifications above so that LH verifies the the specification 
 **Hint:** If you did the above problems correctly, you should have to do nothing here.
 Otherwise, think about what type `normalize` should have and try to work backwards
 to verify that type.
-

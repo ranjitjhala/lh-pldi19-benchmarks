@@ -4,8 +4,9 @@ Lists
 
 <div class="hidden">
 \begin{code}
-{-@ LIQUID "--short-names" @-}
+{-@ LIQUID "--short-names"    @-}
 {-@ LIQUID "--no-termination" @-}
+{-@ LIQUID "--prune-unsorted" @-}
 
 -- CHECKBINDER prop_size
 -- CHECKBINDER empty
@@ -16,7 +17,7 @@ Lists
 -- CHECKBINDER foldr1
 -- CHECKBINDER prop_zipWith
 -- CHECKBINDER prop_concat
- 
+
 
 module List ( List
             , empty
@@ -61,8 +62,8 @@ the *size*, i.e. number of elements of a `List`:
 
 \begin{code}
 {-@ measure size      :: List a -> Int
-    size (Emp)        = 0
-    size ((:+:) x xs) = 1 + size xs
+      size (Emp)        = 0
+      size ((:+:) x xs) = 1 + size xs
   @-}
 
 {-@ invariant {v:List a | 0 <= size v} @-}
@@ -212,8 +213,8 @@ or specification (types, measures) that you need.
 
 \begin{code}
 {-@ measure si      :: List (List a) -> Int
-    si (Emp) = 0
-    si ((:+:) x xs) = size x + si xs
+      si (Emp) = 0
+      si ((:+:) x xs) = size x + si xs
   @-}
 
 {-@ concat ::  x:List (List a) -> {y:List a|size y = si x} @-}
